@@ -42,3 +42,7 @@ The API is also available at [http://localhost:5000](http://localhost:5000)
 ```sh
     task clean
 ```
+
+Below is a link to a video demonstrating various user roles:
+
+[Live Demo](https://drive.google.com/file/d/15wexXzJpQb3tp0hTc5qGoBkghIpj6c8L/view?usp=sharing)
