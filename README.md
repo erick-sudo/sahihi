@@ -29,7 +29,10 @@ Visit [https://taskfile.dev/](https://taskfile.dev/) for a guide to getting up a
     task start
 ```
 
-Visit [http://localhost:4000](Frontend) to view the web interface.
+**NOTE**  
+**At initial startup the api may timeout before the database gets ready. Please consider stopping the server `CTRL + C` and try again.**
+
+Visit [VUE FRONTEND](http://localhost:4000) to view the web interface.
 
 ***Login with the seeded admin user***
 Use the following email and password
