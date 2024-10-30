@@ -118,7 +118,7 @@ const handleSubmit = async () => {
             } else {
                 submissionResponse.value = {
                     status: "error",
-                    message: data.errors.message
+                    message: data.errors.message || "Could not sign in."
                 }
             }
         }).finally(() => {

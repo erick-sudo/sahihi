@@ -29,4 +29,14 @@ export const APIS = {
       destroy: `${baseUrl}/roles/<:roleId>`,
     },
   },
+  customers: {
+    retrieve: `${baseUrl}/customers/<:customerId>`,
+    index: `${baseUrl}/customers`,
+    search: `${baseUrl}/customers/filters/search`,
+    leads: `${baseUrl}/customers/<:customerId>/leads`,
+  },
+  leads: {
+    retrieve: `${baseUrl}/leads/<:leadId>`,
+    index: `${baseUrl}/leads`,
+  },
 };

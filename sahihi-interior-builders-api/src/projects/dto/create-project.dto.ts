@@ -5,6 +5,6 @@ export class CreateProjectDto {
   name: string;
 
   @IsNotEmpty({ message: 'project description is required' })
-  @MaxLength(75, { message: 'use at most 500 characters' })
+  @MaxLength(100, { message: 'use at most 100 characters' })
   description: string | null;
 }

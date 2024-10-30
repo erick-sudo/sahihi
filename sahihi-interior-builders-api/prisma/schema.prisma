@@ -14,81 +14,82 @@ datasource db {
 }
 
 model User {
-  id              String    @id @default(uuid())
-  firstName       String
-  lastName        String
-  email           String    @unique
-  phoneNumber     String    @unique
-  address         String
-  kraPin          String    @unique
-  kraAttachment   String?    // URL or path to attachment file
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  passwordDigest  String
+  id                 String              @id @default(uuid())
+  firstName          String
+  lastName           String
+  email              String              @unique
+  phoneNumber        String              @unique
+  address            String
+  kraPin             String              @unique
+  kraAttachment      String? // URL or path to attachment file
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  passwordDigest     String
   projectAssignments ProjectAssignment[]
-  userRoles UserRole[]
+  userRoles          UserRole[]
 }
 
 model Role {
-  id        String    @id @default(uuid())
-  name      String    @unique
+  id                 String              @id @default(uuid())
+  name               String              @unique
   projectAssignments ProjectAssignment[]
-  userRoles UserRole[]
+  userRoles          UserRole[]
 }
 
 model UserRole {
-  id        String    @id @default(uuid())
-  user       User       @relation(fields: [userId], references: [id])
-  userId     String
-  role       Role       @relation(fields: [roleId], references: [id])
-  roleId     String
+  id     String @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+  role   Role   @relation(fields: [roleId], references: [id])
+  roleId String
 }
 
 model Project {
-  id          String             @id @default(uuid())
-  name        String
-  description String?
-  createdAt   DateTime           @default(now())
-  updatedAt   DateTime           @updatedAt
+  id                 String              @id @default(uuid())
+  name               String
+  description        String?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
   projectAssignments ProjectAssignment[]
 }
 
 model ProjectAssignment {
-  id         String     @id @default(uuid())
-  user       User       @relation(fields: [userId], references: [id])
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
   userId     String
-  project    Project    @relation(fields: [projectId], references: [id])
+  project    Project  @relation(fields: [projectId], references: [id])
   projectId  String
-  role       Role       @relation(fields: [roleId], references: [id])
+  role       Role     @relation(fields: [roleId], references: [id])
   roleId     String
-  assignedAt DateTime   @default(now())
+  assignedAt DateTime @default(now())
 
   @@unique([userId, projectId, roleId])
 }
 
 model Customer {
-  id         Int         @id @default(uuid())
-  company    String?
-  user       User       @relation(fields: [userId], references: [id])
-  userId     String
-  leads      Lead[]      
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  id        String   @id @default(uuid())
+  name       String
+  email      String      @unique
+  phone      String
+  company   String?
+  leads     Lead[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Lead {
-  id             Int          @id @default(uuid())
-  customerId     Int
-  customer       Customer     @relation(fields: [customerId], references: [id])
-  status         String
-  interactions   Interaction[]
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @updatedAt
+  id           String        @id @default(uuid())
+  customerId   String
+  customer     Customer      @relation(fields: [customerId], references: [id])
+  status       String
+  interactions Interaction[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
 }
 
 model Interaction {
-  id        Int      @id @default(uuid())
-  leadId    Int
+  id        String   @id @default(uuid())
+  leadId    String
   lead      Lead     @relation(fields: [leadId], references: [id])
   type      String
   details   String

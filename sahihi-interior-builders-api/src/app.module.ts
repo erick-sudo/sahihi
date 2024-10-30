@@ -17,6 +17,7 @@ import { AuthenticationModule } from './auth/authentication/authentication.modul
 import { PasswordService } from './password/password.service';
 import { ProjectsModule } from './projects/projects.module';
 import { RolesModule } from './roles/roles.module';
+import { CustomersModule } from './customers/customers.module';
 
 @Module({
   imports: [
@@ -58,6 +59,7 @@ import { RolesModule } from './roles/roles.module';
     PrismaModule,
     ProjectsModule,
     RolesModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
