@@ -7,9 +7,9 @@
                 }" @go="onSearch" query-key="q" class="px-4 py-1 rounded-lg border i-input text-sm" />
                 <div><button @click="onSearch(search)" class="s-btn text-sm px-2 py-1 shadow">Go</button></div>
             </div>
-            <div><button class="s-btn px-3 py-1 text-sm shadow" @click="openCustomerForm">Add Customer</button></div>
+            <div><button class="s-btn px-3 py-1 text-sm shadow" @click="openCustomerForm">+&nbsp;Add</button></div>
         </div>
-        <div class="pb-4 grid">
+        <div class="overflow-x-auto pb-2">
             <table class="w-full text-sm">
                 <thead>
                     <tr class="bg-gray-200">

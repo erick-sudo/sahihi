@@ -1,11 +1,6 @@
 <template>
     <div class="p-2 grid gap-2">
-        <div class="">
-            <ProjectList @select="selectProject" />
-        </div>
-        <div v-if="projectStore.getSelectedProject" class="">
-            <ProjectDetails />
-        </div>
+        <ProjectList @select="selectProject" />
     </div>
 </template>
 
@@ -13,7 +8,6 @@
 import { onMounted } from 'vue';
 import { useProjectStore } from '../../../stores/store.projects';
 import ProjectList from './ProjectList.vue';
-import ProjectDetails from './ProjectDetails.vue';
 
 const projectStore = useProjectStore();
 

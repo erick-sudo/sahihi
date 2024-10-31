@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.s-btn-disabled {
+  @apply cursor-pointer disabled:bg-gray-200 disabled:text-gray-600/20 disabled:cursor-not-allowed
+}
+
 .s-input {
   @apply w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-400 focus:border-green-700 duration-300;
 }
 
 .i-input {
-  @apply focus:outline-none focus:ring focus:ring-green-400 focus:border-green-700 duration-300
+  @apply focus:outline-none focus:ring focus:ring-green-400 focus:border-green-700 duration-300;
 }
 
 .s-btn {
@@ -30,10 +34,26 @@
   @apply bg-red-200 text-red-900;
 }
 
+.s-warning {
+  @apply bg-amber-200 text-amber-900;
+}
+
+.s-info {
+  @apply bg-cyan-200 text-cyan-900;
+}
+
 .s-success-fill {
   @apply text-green-200 bg-green-900;
 }
 
 .s-error-fill {
-  @apply text-red-200 bg-red-900
+  @apply text-red-200 bg-red-900;
+}
+
+.s-warning-fill {
+  @apply text-amber-200 bg-amber-900;
+}
+
+.s-info-fill {
+  @apply text-cyan-200 bg-cyan-900;
 }

@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="overflow-x-auto p-2 bg-gray-50 shadow">
-            <div class="">
+    <div class="grid gap-4">
+        <div class="grid">
+            <div class="overflow-x-auto">
                 <table class="w-full rounded shadow">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -23,7 +23,8 @@
             </div>
         </div>
 
-        <div class="p-4">
+        <div class="p-4 rounded bg-gray-50 shadow">
+            <h3 class="">Create New User</h3>
             <CreateUserForm />
         </div>
     </div>

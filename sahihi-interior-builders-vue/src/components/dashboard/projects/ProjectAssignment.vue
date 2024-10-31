@@ -1,15 +1,15 @@
 <template>
-    <div class="grid grid-cols-3">
-        <p class="text-sm text-gray-500">
+    <div class="grid grid-cols-3 items-center">
+        <span class="text-sm text-gray-500">
             <strong class="text-gray-800">User:</strong> {{ user }}
-        </p>
-        <p class="text-sm text-gray-500">
-            <strong class="text-gray-800">Role:</strong> {{ role }}
-        </p>
-        <p class="text-sm text-gray-500 flex justify-center">
+        </span>
+        <span class="text-sm text-gray-500">
+            <strong class="text-gray-800">Role:</strong> {{ role.slice(5) }}
+        </span>
+        <span class="text-sm text-gray-500 flex justify-center">
             <button :disabled="!authStore.isAdmin" @click="unassignRole(projectStore.getSelectedProject!!)"
-                class="text-red-800 disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed hover:bg-red-200 px-4 rounded py-1.5 duration-300">Unassign</button>
-        </p>
+                class="text-red-800 disabled:bg-gray-200 disabled:text-gray-600/20 disabled:cursor-not-allowed hover:bg-red-200 px-4 rounded py-1.5 duration-300">Unassign</button>
+        </span>
     </div>
 </template>
 

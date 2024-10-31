@@ -39,5 +39,8 @@ export const useProjectStore = defineStore("projects", {
         this.currentProject = response.result;
       }
     },
+    clearCurrentProject() {
+      this.currentProject = null;
+    },
   },
 });

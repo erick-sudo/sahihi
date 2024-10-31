@@ -1,14 +1,14 @@
 <template>
     <form class="grid gap-2" @submit.prevent="handleSubmit">
         <!-- Step 1: Personal Details -->
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-y-2 gap-x-4 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-                <label class="block text-gray-700">First Name</label>
+                <label class="">First Name</label>
                 <input v-model="form.firstName" type="text" class="s-input" />
                 <span v-if="errors.firstName" class="text-red-600 text-xs">{{ errors.firstName }}</span>
             </div>
             <div>
-                <label class="block text-gray-700">Last Name</label>
+                <label class="">Last Name</label>
                 <input v-model="form.lastName" type="text" class="s-input" />
                 <span v-if="errors.lastName" class="text-red-600 text-xs">{{ errors.lastName }}</span>
             </div>
@@ -16,24 +16,24 @@
 
             <!-- Step 2: Contact Details -->
             <div>
-                <label class="block text-gray-700">Phone Number</label>
+                <label class="">Phone Number</label>
                 <input placeholder="e.g. +254700000000" v-model="form.phoneNumber" type="tel" class="s-input" />
                 <span v-if="errors.phoneNumber" class="text-red-600 text-xs">{{ errors.phoneNumber }}</span>
             </div>
             <div>
-                <label class="block text-gray-700">Address</label>
+                <label class="">Address</label>
                 <input v-model="form.address" type="text" class="s-input" />
                 <span v-if="errors.address" class="text-red-600 text-xs">{{ errors.address }}</span>
             </div>
             <div>
-                <label class="block text-gray-700">Email</label>
+                <label class="">Email</label>
                 <input v-model="form.email" type="email" class="s-input" />
                 <span v-if="errors.email" class="text-red-600 text-xs">{{ errors.email }}</span>
             </div>
 
             <!-- Step 3: Security Information -->
             <div>
-                <label class="block text-gray-700">KRA Pin</label>
+                <label class="">KRA Pin</label>
                 <input v-model="form.kraPin" type="text" class="s-input" />
                 <span v-if="errors.kraPin" class="text-red-600 text-xs">{{ errors.kraPin }}</span>
             </div>
@@ -135,4 +135,8 @@ const handleSubmit = async () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+label {
+    @apply text-sm text-gray-700 mb-0
+}
+</style>
